@@ -1,2 +1,3 @@
 .nvmrc
 *.test.js
+src
