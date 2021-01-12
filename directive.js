@@ -15,9 +15,9 @@ const defaultTags = [
   'sup',
 ];
 const areTagsValid = (tags) => (
-  Array.isArray(tags) &&
-  tags.length > 0 &&
-  tags.every(tag => typeof tag === 'string')
+  Array.isArray(tags)
+  && tags.length > 0
+  && tags.every((tag) => typeof tag === 'string')
 );
 
 export { defaultTags as allowedTags };
@@ -30,4 +30,4 @@ export default (tags) => {
     const sanitized = sanitizeHTML(binding.value, finalTags);
     el.innerHTML = sanitized;
   };
-}
+};

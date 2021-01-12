@@ -1,6 +1,4 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
-import { afterAll, afterEach, beforeAll, beforeEach, expect, it, jest } from '@jest/globals';
-import createDirective from './directive';
 import VueSafeHTML from './index';
 
 describe('Plugin', () => {
@@ -22,7 +20,7 @@ describe('Plugin', () => {
     });
 
     it('Installs directive with custom allowed tags', () => {
-      const allowedTags = ['a', 'button']
+      const allowedTags = ['a', 'button'];
       VueSafeHTML.install(localVue, { allowedTags });
       expect(localVue.directive.mock.calls[0][0]).toBe('safe-html');
       expect(localVue.directive.mock.calls[0][1]).toBeInstanceOf(Function);
@@ -34,16 +32,18 @@ describe('Plugin', () => {
     localVue.use(VueSafeHTML);
 
     it('Sanitizes given string', () => {
-      const Component = localVue.component('safe-html-component', {
+      // eslint-disable-next-line vue/one-component-per-file
+      const Component = localVue.component('SafeHtmlComponent', {
         template: '<div v-safe-html="\'<p><strong>Safe</strong> HTML<script></script></p>\'"></div>',
       });
       const wrapper = shallowMount(Component, { localVue });
       const expected = '<div><strong>Safe</strong> HTML</div>';
       expect(wrapper.html()).toBe(expected);
-    })
+    });
 
     it('Sanitizes with custom allowed tags', () => {
-      const Component = localVue.component('safe-html-component', {
+      // eslint-disable-next-line vue/one-component-per-file
+      const Component = localVue.component('SafeHtmlComponent', {
         template: '<div v-safe-html.span="\'<p><strong><span>Safe</span></strong> HTML<script></script></p>\'"></div>',
       });
       const wrapper = shallowMount(Component, { localVue });

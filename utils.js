@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export const sanitizeHTML = (htmlString, allowedElements = []) => {
   // ESLint is complaining about not needed escaped character,
   // but they need to be escaped
