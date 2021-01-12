@@ -75,6 +75,16 @@ Vue.use(VueSafeHTML, {
 });
 ```
 
+If no tags are passed, all tags are stripped:
+
+```js
+import VueSafeHTML, { allowedTags } from '@ecosia/vue-safe-html';
+
+Vue.use(VueSafeHTML, {
+  allowedTags: [],
+});
+```
+
 ## License
 
 [MIT](./LICENSE)
