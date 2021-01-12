@@ -6,13 +6,13 @@
   "repository": "git@github.com:ecosia/vue-safe-html.git",
   "author": "Ecosia GmbH <info@ecosia.org>",
   "license": "MIT",
+  "private": true,
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.11.0",
     "@vue/test-utils": "^1.1.2",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
-    "jest-config": "24.9.0",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.12"
   },

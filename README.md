@@ -51,7 +51,7 @@ Renders to:
 
 #### allowedTags
 
-Array of strings. Default: `['a', 'b', 'br', 'strong', 'i', 'em', 'mark', 'small', 'del', 'ins', 'sub', 'sup']`
+Array of strings. Default: `['a', 'b', 'br', 'strong', 'i', 'em', 'mark', 'small', 'del', 'ins', 'sub', 'sup']`.
 
 Customize the tags that are allowed to be rendered, either by providing new ones:
 
