@@ -1,6 +1,6 @@
 import { sanitizeHTML } from './utils';
 
-const ALLOWED_ELEMENTS = [
+const defaultTags = [
   'a',
   'b',
   'br',
@@ -14,9 +14,16 @@ const ALLOWED_ELEMENTS = [
   'sub',
   'sup',
 ];
+const areTagsValid = (tags) => Array.isArray(tags) && tags.every(tag => typeof tag === 'string')
 
-export default (el, binding) => {
-  const sanitized = sanitizeHTML(binding.value, ALLOWED_ELEMENTS);
-  // eslint-disable-next-line
-  el.innerHTML = sanitized;
-};
+export { defaultTags as allowedTags };
+
+export default (tags) => {
+  const initialTags = areTagsValid(tags) ? tags : defaultTags;
+  return (el, binding) => {
+    const directiveTags = binding.arg.allowedTags;
+    const finalTags = areTagsValid(directiveTags) ? directiveTags : initialTags;
+    const sanitized = sanitizeHTML(binding.value, finalTags);
+    el.innerHTML = sanitized;
+  };
+}

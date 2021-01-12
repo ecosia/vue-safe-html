@@ -1,5 +1,7 @@
-/* eslint-disable import/prefer-default-export */
-import Vue from 'vue';
-import directive from './directive';
+import createDirective from './directive';
 
-Vue.directive('safe-html', directive);
+export default {
+  install: (Vue, options) => {
+    Vue.directive('safe-html', createDirective(options.allowedTags));
+  }
+}
