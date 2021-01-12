@@ -7,6 +7,7 @@
   "author": "Ecosia GmbH <info@ecosia.org>",
   "license": "MIT",
   "devDependencies": {
+    "@vue/test-utils": "^1.1.2",
     "vue": "^2.6.11"
   }
 }
