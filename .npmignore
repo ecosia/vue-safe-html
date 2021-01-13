@@ -7,3 +7,4 @@ jest.config.js
 webpack.config.js
 *.test.js
 src
+yarn.lock
