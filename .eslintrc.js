@@ -16,6 +16,7 @@ module.exports = {
   },
   root: true,
   rules: {
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.js', '**/*.test3.js'] }],
     'no-param-reassign': ['error', { props: false }],
     'operator-linebreak': ['error', 'after'],
   },
