@@ -1,11 +1,11 @@
-name: Install + Test + Build
+name: CI
 on:
   push:
     branches:
       - "*"
 jobs:
   build:
-    name: Test
+    name: Install + Test + Build
     runs-on: ubuntu-latest
     container: node:14.15-alpine
     steps:
