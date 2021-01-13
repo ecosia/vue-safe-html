@@ -29,6 +29,7 @@
     "lint": "eslint .",
     "test:unit": "jest --maxWorkers=1",
     "test": "yarn test:unit",
-    "build": "webpack"
+    "build": "webpack",
+    "prepublishOnly": "yarn build"
   }
 }
