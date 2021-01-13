@@ -31,7 +31,7 @@ In your component:
 
 ```html
 <template>
-  <div vue-safe-html="myUnsafeHTML">
+  <div v-safe-html="myUnsafeHTML">
 </template>
 ```
 

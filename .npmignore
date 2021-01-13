@@ -1,3 +1,10 @@
 .nvmrc
+.editorconfig
+.eslintrc.js
+.gitignore
+babel.config.js
+jest.config.js
+webpack.config.js
 *.test.js
 src
+yarn.lock
