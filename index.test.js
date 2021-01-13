@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
-import VueSafeHTML from './index';
+import Plugin from './index';
 
 describe('Plugin', () => {
   describe('Installs', () => {
@@ -11,9 +11,9 @@ describe('Plugin', () => {
     });
 
     it('Installs directive', () => {
-      expect(VueSafeHTML).toBeInstanceOf(Object);
-      expect(VueSafeHTML.install).toBeInstanceOf(Function);
-      VueSafeHTML.install(localVue);
+      expect(Plugin).toBeInstanceOf(Object);
+      expect(Plugin.install).toBeInstanceOf(Function);
+      Plugin.install(localVue);
       expect(localVue.directive).toHaveBeenCalledTimes(1);
       expect(localVue.directive.mock.calls[0][0]).toBe('safe-html');
       expect(localVue.directive.mock.calls[0][1]).toBeInstanceOf(Function);
@@ -21,7 +21,7 @@ describe('Plugin', () => {
 
     it('Installs directive with custom allowed tags', () => {
       const allowedTags = ['a', 'button'];
-      VueSafeHTML.install(localVue, { allowedTags });
+      Plugin.install(localVue, { allowedTags });
       expect(localVue.directive.mock.calls[0][0]).toBe('safe-html');
       expect(localVue.directive.mock.calls[0][1]).toBeInstanceOf(Function);
     });
@@ -29,10 +29,10 @@ describe('Plugin', () => {
 
   describe('Integration', () => {
     const localVue = createLocalVue();
-    localVue.use(VueSafeHTML);
+    localVue.use(Plugin);
 
     it('Sanitizes given string', () => {
-      // eslint-disable-next-line vue/one-component-per-file
+    // eslint-disable-next-line vue/one-component-per-file
       const Component = localVue.component('SafeHtmlComponent', {
         template: '<div v-safe-html="\'<p><strong>Safe</strong> HTML<script></script></p>\'"></div>',
       });
@@ -42,7 +42,7 @@ describe('Plugin', () => {
     });
 
     it('Sanitizes with custom allowed tags', () => {
-      // eslint-disable-next-line vue/one-component-per-file
+    // eslint-disable-next-line vue/one-component-per-file
       const Component = localVue.component('SafeHtmlComponent', {
         template: '<div v-safe-html.span="\'<p><strong><span>Safe</span></strong> HTML<script></script></p>\'"></div>',
       });
