@@ -2,17 +2,18 @@
   "name": "vue-safe-html",
   "version": "1.0.0",
   "description": "A Vue directive which renders sanitised HTML dynamically",
-  "main": "index.js",
+  "main": "dist/main.js",
   "repository": "git@github.com:ecosia/vue-safe-html.git",
   "author": "Ecosia GmbH <info@ecosia.org>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@vue/test-utils": "^1.1.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-compat": "^3.9.0",
@@ -20,11 +21,15 @@
     "eslint-plugin-vue": "^7.4.1",
     "jest": "^26.6.3",
     "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1"
   },
   "scripts": {
     "lint": "eslint .",
     "test:unit": "jest --maxWorkers=1",
-    "test": "yarn test:unit"
+    "test": "yarn test:unit",
+    "build": "webpack",
+    "prepublishOnly": "yarn build"
   }
 }

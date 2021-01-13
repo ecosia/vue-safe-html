@@ -1,4 +1,4 @@
-name: Install and run tests
+name: Install + Test + Build
 on:
   push:
     branches:
@@ -7,11 +7,9 @@ jobs:
   build:
     name: Test
     runs-on: ubuntu-latest
+    container: node:14.15-alpine
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: test # will run `yarn test` command
+      - run: yarn
+      - run: yarn test
+      - run: yarn build
