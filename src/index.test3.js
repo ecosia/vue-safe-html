@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import Plugin from './index';
 
-describe('Vue 3', () => {
+describe('Integration', () => {
   it('Sanitizes given string', () => {
     const wrapper = shallowMount({
       template: '<div v-safe-html="\'<p><strong>Safe</strong> HTML<script></script></p>\'"></div>',
