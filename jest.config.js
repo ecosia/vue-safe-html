@@ -11,8 +11,8 @@ module.exports = {
       displayName: 'Vue 3',
       testMatch: ['**/?(*.)+(test3).[jt]s?(x)'],
       moduleNameMapper: {
-        '^vue$': '<rootDir>/node_modules/vue3',
-        '^@vue/test-utils$': '<rootDir>/node_modules/@vue/test-utils3',
+        '^vue$': 'vue3',
+        '^@vue/test-utils$': '@vue/test-utils3',
       },
     },
   ],
