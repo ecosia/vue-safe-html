@@ -1,5 +1,5 @@
 ![Node](https://img.shields.io/node/v/vue-safe-html)
-[![NPM](https://img.shields.io/npm/v/vue-safe-html)](https://www.npmjs.com/package/vue-directive-tooltip)
+[![NPM](https://img.shields.io/npm/v/vue-safe-html)](https://www.npmjs.com/package/vue-safe-html)
 [![Vue.js](https://img.shields.io/badge/vue-2-green.svg)](https://vuejs.org)
 
 # vue-safe-html
