@@ -11,7 +11,6 @@
     "Markus Waitl (https://github.com/axlwaii)"
   ],
   "license": "SEE LICENSE IN 'LICENSE'",
-  "private": true,
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "test:unit": "jest --maxWorkers=1",
