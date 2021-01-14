@@ -1,28 +1,28 @@
-![Node](https://img.shields.io/node/v/vue-strip-html)
-[![NPM](https://img.shields.io/npm/v/vue-strip-html)](https://www.npmjs.com/package/vue-strip-html)
+![Node](https://img.shields.io/node/v/vue-safe-html)
+[![NPM](https://img.shields.io/npm/v/vue-safe-html)](https://www.npmjs.com/package/vue-safe-html)
 [![Vue.js](https://img.shields.io/badge/vue-2-green.svg)](https://vuejs.org)
 
-# vue-strip-html
+# vue-safe-html
 
-A Vue directive which renders sanitised HTML dynamically.
+A Vue directive which renders sanitised HTML dynamically. Zero-dependency,
 
 ## Installation
 
 Install package:
 
 ```sh
-npm install @ecosia/vue-strip-html
+npm install @ecosia/vue-safe-html
 # OR
-yarn add @ecosia/vue-strip-html
+yarn add @ecosia/vue-safe-html
 ```
 
 Use the plugin:
 
 ```js
 import Vue from 'vue';
-import VueStripHTML from '@ecosia/vue-strip-html';
+import VueSafeHTML from '@ecosia/vue-safe-html';
 
-Vue.use(VueStripHTML);
+Vue.use(VueSafeHTML);
 ```
 
 ## Usage
@@ -31,15 +31,15 @@ In your component:
 
 ```html
 <template>
-  <div v-strip-html="myUnstrippedHTML">
+  <div v-safe-html="myUnsafeHTML">
 </template>
 ```
 
 ```js
 export default {
   computed: {
-    myUnstrippedHTML() {
-      return '<script>Oh my!</script> I am stripped!';
+    myUnsafeHTML() {
+      return '<script>oh my!</script> I am safe!';
     }
   }
 }
@@ -48,7 +48,7 @@ export default {
 Renders to:
 
 ```html
-<div>I am stripped!</div>
+<div>I am safe!</div>
 ```
 
 ### Options
@@ -60,7 +60,7 @@ Array of strings. Default: `['a', 'b', 'br', 'strong', 'i', 'em', 'mark', 'small
 Customize the tags that are allowed to be rendered, either by providing new ones:
 
 ```js
-Vue.use(VueStripHTML, {
+Vue.use(VueSafeHTML, {
   allowedTags: ['marquee', 'blockquote'],
 });
 ```
@@ -68,9 +68,9 @@ Vue.use(VueStripHTML, {
 Or extending the default ones:
 
 ```js
-import VueStripHTML, { allowedTags } from '@ecosia/vue-strip-html';
+import VueSafeHTML, { allowedTags } from '@ecosia/vue-safe-html';
 
-Vue.use(VueStripHTML, {
+Vue.use(VueSafeHTML, {
   allowedTags: [...allowedTags, 'marquee', 'blockquote'],
 });
 ```
@@ -78,25 +78,16 @@ Vue.use(VueStripHTML, {
 If no tags are passed, all tags are stripped:
 
 ```js
-import VueStripHTML, { allowedTags } from '@ecosia/vue-strip-html';
+import VueSafeHTML, { allowedTags } from '@ecosia/vue-safe-html';
 
-Vue.use(VueStripHTML, {
+Vue.use(VueSafeHTML, {
   allowedTags: [],
 });
 ```
 
-It is also possible to provide custom allowed tags directly to the directive tag, using directive modifiers. This allows local override of the option:
-
-```html
-<template>
-  <!-- only allow p and strong tags -->
-  <div v-strip-html.p.strong="myUnstrippedHTML">
-</template>
-```
-
 ### Nuxt
 
-`vue-strip-html` is written as a Vue plugin so you can easily use it inside Nuxt by following [the Nuxt documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins#vue-plugins).
+`vue-safe-html` is written as a Vue plugin so you can easily use it inside Nuxt by following [the Nuxt documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins#vue-plugins).
 
 ## License
 

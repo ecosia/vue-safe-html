@@ -1,15 +1,10 @@
 {
-  "name": "vue-strip-html",
+  "name": "vue-safe-html",
   "version": "1.0.0",
   "description": "A Vue directive which renders sanitised HTML dynamically",
   "main": "dist/main.js",
-  "repository": "git@github.com:ecosia/vue-strip-html.git",
+  "repository": "git@github.com:ecosia/vue-safe-html.git",
   "author": "Ecosia GmbH <info@ecosia.org>",
-  "contributors": [
-    "Emanuele Marchi (https://github.com/LostCrew)",
-    "Jakub Fiala (https://github.com/jakubfiala)",
-    "Markus Waitl (https://github.com/axlwaii)"
-  ],
   "license": "MIT",
   "private": true,
   "devDependencies": {
