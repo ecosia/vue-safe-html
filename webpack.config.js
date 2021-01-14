@@ -5,9 +5,9 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: resolve(__dirname, 'dist'),
-    library: 'VueSafeHTML',
+    library: 'VueStripHTML',
     libraryTarget: 'umd',
-    globalObject: `(typeof self !== 'undefined' ? self : this)`,
+    globalObject: '(typeof self !== \'undefined\' ? self : this)',
   },
   mode: 'production',
   module: {
