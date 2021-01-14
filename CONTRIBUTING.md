@@ -6,6 +6,7 @@ If you are thinking of introduing a new feature or making a significant change t
 first with the maintainers by creating an issue.
 
 ### Process
+
 - Fork and clone the repo
 - Use a text editor with support for .editorconfig
 - Implement the change
