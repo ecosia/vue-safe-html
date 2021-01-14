@@ -85,6 +85,10 @@ Vue.use(VueSafeHTML, {
 });
 ```
 
+### Nuxt
+
+`vue-safe-html` is written as Vue plugin so you can easily use it inside nuxt by following [the nuxt documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins#vue-plugins).
+
 ## License
 
 [MIT](./LICENSE)
