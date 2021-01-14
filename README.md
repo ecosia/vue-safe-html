@@ -100,4 +100,4 @@ It is also possible to provide custom allowed tags directly to the directive tag
 
 ## License
 
-[MIT](./LICENSE)
+[Do No Harm](./LICENSE)
