@@ -85,6 +85,15 @@ Vue.use(VueSafeHTML, {
 });
 ```
 
+It is also possible to provide custom allowed tags directly to the directive tag, using directive modifiers. This allows local override of the option:
+
+```html
+<template>
+  <!-- only allow p and strong tags -->
+  <div v-safe-html.p.strong="myUnsafeHTML">
+</template>
+```
+
 ### Nuxt
 
 `vue-safe-html` is written as a Vue plugin so you can easily use it inside Nuxt by following [the Nuxt documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins#vue-plugins).

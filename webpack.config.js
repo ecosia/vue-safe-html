@@ -7,7 +7,7 @@ module.exports = {
     path: resolve(__dirname, 'dist'),
     library: 'VueSafeHTML',
     libraryTarget: 'umd',
-    globalObject: `(typeof self !== 'undefined' ? self : this)`,
+    globalObject: '(typeof self !== \'undefined\' ? self : this)',
   },
   mode: 'production',
   module: {
