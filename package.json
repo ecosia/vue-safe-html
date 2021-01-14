@@ -10,6 +10,14 @@
     "Jakub Fiala (https://github.com/jakubfiala)",
     "Markus Waitl (https://github.com/axlwaii)"
   ],
+  "keywords": [
+    "vue",
+    "directive",
+    "safe",
+    "html",
+    "sanitize",
+    "strip"
+  ],
   "license": "SEE LICENSE IN 'LICENSE'",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
