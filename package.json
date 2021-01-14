@@ -10,7 +10,7 @@
     "Jakub Fiala (https://github.com/jakubfiala)",
     "Markus Waitl (https://github.com/axlwaii)"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN 'LICENSE'",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.12.10",
