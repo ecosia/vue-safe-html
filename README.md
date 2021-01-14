@@ -13,16 +13,16 @@ A Vue directive which renders sanitised HTML dynamically. Zero-dependency,
 Install package:
 
 ```sh
-npm install @ecosia/vue-safe-html
+npm install vue-safe-html
 # OR
-yarn add @ecosia/vue-safe-html
+yarn add vue-safe-html
 ```
 
 Use the plugin:
 
 ```js
 import Vue from 'vue';
-import VueSafeHTML from '@ecosia/vue-safe-html';
+import VueSafeHTML from 'vue-safe-html';
 
 Vue.use(VueSafeHTML);
 ```
@@ -70,7 +70,7 @@ Vue.use(VueSafeHTML, {
 Or extending the default ones:
 
 ```js
-import VueSafeHTML, { allowedTags } from '@ecosia/vue-safe-html';
+import VueSafeHTML, { allowedTags } from 'vue-safe-html';
 
 Vue.use(VueSafeHTML, {
   allowedTags: [...allowedTags, 'marquee', 'blockquote'],
@@ -80,7 +80,7 @@ Vue.use(VueSafeHTML, {
 If no tags are passed, all tags are stripped:
 
 ```js
-import VueSafeHTML, { allowedTags } from '@ecosia/vue-safe-html';
+import VueSafeHTML, { allowedTags } from 'vue-safe-html';
 
 Vue.use(VueSafeHTML, {
   allowedTags: [],
