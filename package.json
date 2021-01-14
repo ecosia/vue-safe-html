@@ -1,5 +1,5 @@
 {
-  "name": "vue-safe-html",
+  "name": "@ecosia/vue-safe-html",
   "version": "1.0.0",
   "description": "A Vue directive which renders sanitised HTML dynamically",
   "main": "dist/main.js",
