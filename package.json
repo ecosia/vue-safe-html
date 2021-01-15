@@ -4,7 +4,7 @@
   "description": "A Vue directive which renders sanitised HTML dynamically",
   "main": "dist/main.js",
   "repository": "git@github.com:ecosia/vue-safe-html.git",
-  "author": "Ecosia GmbH <info@ecosia.org>",
+  "author": "Ecosia GmbH <opensource@ecosia.org>",
   "contributors": [
     "Emanuele Marchi (https://github.com/LostCrew)",
     "Jakub Fiala (https://github.com/jakubfiala)",
