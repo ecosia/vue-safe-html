@@ -1,6 +1,6 @@
 {
   "name": "vue-safe-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue directive which renders sanitised HTML dynamically",
   "main": "dist/main.js",
   "repository": "git@github.com:ecosia/vue-safe-html.git",
