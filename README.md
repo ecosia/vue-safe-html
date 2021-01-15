@@ -2,7 +2,7 @@
 
 ![Node](https://img.shields.io/node/v/vue-safe-html)
 [![NPM](https://img.shields.io/npm/v/vue-safe-html)](https://www.npmjs.com/package/vue-safe-html)
-[![Github Checks Status](https://img.shields.io/github/checks-status/ecosia/vue-safe-html/main)](https://github.com/ecosia/vue-safe-html/tree/main)
+[![Github Checks Status](https://img.shields.io/github/workflow/status/ecosia/vue-safe-html/CI)](https://github.com/ecosia/vue-safe-html/tree/main)
 [![Vue.js](https://img.shields.io/badge/vue-2-green.svg)](https://vuejs.org)
 [![Vue.js](https://img.shields.io/badge/vue-3-green.svg)](https://v3.vuejs.org)
 
