@@ -1,11 +1,11 @@
-## Contributing
+# Contributing
 
-We always welcome pull requests. This guide will help you to ensure that that your time is spent wisely. 
+We always welcome pull requests. This guide will help you to ensure that that your time is spent wisely.
 
 If you are thinking of introduing a new feature or making a significant change to an existing behavior, discuss it
 first with the maintainers by creating an issue.
 
-### Process
+## Process
 
 - Fork and clone the repo
 - Use a text editor with support for .editorconfig
