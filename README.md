@@ -80,7 +80,7 @@ Vue.use(VueSafeHTML, {
 If no tags are passed, all tags are stripped:
 
 ```js
-import VueSafeHTML, { allowedTags } from 'vue-safe-html';
+import VueSafeHTML from 'vue-safe-html';
 
 Vue.use(VueSafeHTML, {
   allowedTags: [],
