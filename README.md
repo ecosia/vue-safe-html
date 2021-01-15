@@ -1,28 +1,28 @@
+# vue-safe-html
+
 ![Node](https://img.shields.io/node/v/vue-safe-html)
 [![NPM](https://img.shields.io/npm/v/vue-safe-html)](https://www.npmjs.com/package/vue-safe-html)
 [![Github Checks Status](https://img.shields.io/github/checks-status/ecosia/vue-safe-html/main)](https://github.com/ecosia/vue-safe-html/tree/main)
 [![Vue.js](https://img.shields.io/badge/vue-2-green.svg)](https://vuejs.org)
 [![Vue.js](https://img.shields.io/badge/vue-3-green.svg)](https://v3.vuejs.org)
 
-# vue-safe-html
-
-A Vue directive which renders sanitised HTML dynamically. Zero-dependency,
+A Vue directive which renders sanitised HTML dynamically. Zero dependencies, compatible with Vue versions 3 and 2, TypeScript-ready.
 
 ## Installation
 
 Install package:
 
 ```sh
-npm install @ecosia/vue-safe-html
+npm install vue-safe-html
 # OR
-yarn add @ecosia/vue-safe-html
+yarn add vue-safe-html
 ```
 
 Use the plugin:
 
 ```js
 import Vue from 'vue';
-import VueSafeHTML from '@ecosia/vue-safe-html';
+import VueSafeHTML from 'vue-safe-html';
 
 Vue.use(VueSafeHTML);
 ```
@@ -70,7 +70,7 @@ Vue.use(VueSafeHTML, {
 Or extending the default ones:
 
 ```js
-import VueSafeHTML, { allowedTags } from '@ecosia/vue-safe-html';
+import VueSafeHTML, { allowedTags } from 'vue-safe-html';
 
 Vue.use(VueSafeHTML, {
   allowedTags: [...allowedTags, 'marquee', 'blockquote'],
@@ -80,7 +80,7 @@ Vue.use(VueSafeHTML, {
 If no tags are passed, all tags are stripped:
 
 ```js
-import VueSafeHTML, { allowedTags } from '@ecosia/vue-safe-html';
+import VueSafeHTML, { allowedTags } from 'vue-safe-html';
 
 Vue.use(VueSafeHTML, {
   allowedTags: [],
