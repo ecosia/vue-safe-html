@@ -1,4 +1,8 @@
-import createDirective from './directive';
+import createDirective, { allowedTags } from './directive';
+
+export {
+  allowedTags,
+};
 
 export default {
   install: (Vue, options = {}) => {
