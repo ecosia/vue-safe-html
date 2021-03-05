@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
-import Plugin from './index';
+import Plugin, { allowedTags as defaultAllowedTags } from './index';
 
 describe('Plugin', () => {
   describe('Installs', () => {
@@ -21,7 +21,7 @@ describe('Plugin', () => {
 
     it('Installs directive with custom allowed tags', () => {
       const allowedTags = ['a', 'button'];
-      Plugin.install(localVue, { allowedTags });
+      Plugin.install(localVue, { ...defaultAllowedTags, allowedTags });
       expect(localVue.directive.mock.calls[0][0]).toBe('safe-html');
       expect(localVue.directive.mock.calls[0][1]).toBeInstanceOf(Function);
     });
