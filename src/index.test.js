@@ -1,5 +1,5 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
-import Plugin from './index';
+import Plugin, { allowedTags as defaultAllowedTags } from './index';
 
 describe('Plugin', () => {
   describe('Installs', () => {
@@ -28,11 +28,10 @@ describe('Plugin', () => {
   });
 
   describe('Integration', () => {
-    const localVue = createLocalVue();
-    localVue.use(Plugin);
-
     it('Sanitizes given string', () => {
-    // eslint-disable-next-line vue/one-component-per-file
+      const localVue = createLocalVue();
+      localVue.use(Plugin);
+      // eslint-disable-next-line vue/one-component-per-file
       const Component = localVue.component('SafeHtmlComponent', {
         template: '<div v-safe-html="\'<p><strong>Safe</strong> HTML<script></script></p>\'"></div>',
       });
@@ -42,13 +41,20 @@ describe('Plugin', () => {
     });
 
     it('Sanitizes with custom allowed tags', () => {
-    // eslint-disable-next-line vue/one-component-per-file
+      const localVue = createLocalVue();
+      localVue.use(Plugin, {
+        allowedTags: [
+          ...defaultAllowedTags,
+          'section',
+        ],
+      });
+      // eslint-disable-next-line vue/one-component-per-file
       const Component = localVue.component('SafeHtmlComponent', {
-        template: '<div v-safe-html.span="\'<p><strong><span>Safe</span></strong> HTML<script></script></p>\'"></div>',
+        template: '<div v-safe-html="\'<p><section><strong>Safe</strong></section> HTML<script></script></p>\'"></div>',
       });
       const wrapper = shallowMount(Component, { localVue });
-      const expected = '<div><span>Safe</span> HTML</div>';
-      expect(wrapper.html()).toBe(expected);
+      const expected = '<div><section><strong>Safe</strong></section> HTML</div>';
+      expect(wrapper.element.outerHTML).toBe(expected);
     });
   });
 });
