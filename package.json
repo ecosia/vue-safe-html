@@ -19,7 +19,7 @@
     "strip"
   ],
   "engines": {
-    "node": "^14.15.1"
+    "node": "^16.13.1"
   },
   "license": "SEE LICENSE IN 'LICENSE'",
   "scripts": {
@@ -33,7 +33,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@vue/test-utils": "^1.1.2",
-    "@vue/test-utils3": "npm:@vue/test-utils@next",
+    "@vue/test-utils3": "npm:@vue/test-utils@2.0.0-rc.18",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.2",
@@ -45,7 +45,7 @@
     "jest": "^26.6.3",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.12",
-    "vue3": "npm:vue@next",
+    "vue3": "npm:vue@3.2.26",
     "webpack": "^5.13.0",
     "webpack-cli": "^4.3.1"
   }
