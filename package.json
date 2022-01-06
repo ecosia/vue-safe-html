@@ -19,7 +19,7 @@
     "strip"
   ],
   "engines": {
-    "node": "^14.15.1"
+    "node": "^16.13.1"
   },
   "license": "SEE LICENSE IN 'LICENSE'",
   "scripts": {
