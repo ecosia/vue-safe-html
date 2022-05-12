@@ -1,7 +1,13 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
-import Plugin, { allowedTags as defaultAllowedTags } from './index';
+
+import Plugin, { allowedTags as defaultAllowedTags, createDirective } from './index';
 
 describe('Plugin', () => {
+  it('Exports allowedTags and createDirective', () => {
+    expect(defaultAllowedTags).toBeInstanceOf(Array);
+    expect(createDirective).toBeInstanceOf(Function);
+  });
+
   describe('Installs', () => {
     const localVue = createLocalVue();
     localVue.directive = jest.fn();
