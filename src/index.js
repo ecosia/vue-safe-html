@@ -2,6 +2,7 @@ import createDirective, { allowedTags } from './directive';
 
 export {
   allowedTags,
+  createDirective,
 };
 
 export default {
