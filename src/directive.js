@@ -24,10 +24,15 @@ export { defaultTags as allowedTags };
 export default (tags) => {
   const initialTags = areTagsValid(tags) ? tags : defaultTags;
   return (el, binding) => {
-    const directiveTags = Object.keys(binding.modifiers);
-    const finalTags = directiveTags.length > 0 && areTagsValid(directiveTags) ?
-      directiveTags :
-      initialTags;
+    let finalTags = initialTags;
+
+    if (binding.modifiers) {
+      const directiveTags = Object.keys(binding.modifiers);
+      if (directiveTags.length > 0 && areTagsValid(directiveTags)) {
+        finalTags = directiveTags;
+      }
+    }
+
     const sanitized = sanitizeHTML(binding.value, finalTags);
 
     if (typeof el.innerHTML === 'string') {
