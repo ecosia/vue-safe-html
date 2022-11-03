@@ -6,9 +6,27 @@
  */
 // eslint-disable-next-line import/prefer-default-export
 export const sanitizeHTML = (htmlString, allowedTags = []) => {
+  // Add an optional white space to the allowed tags
+  const allowedTagsWhiteSpaced = allowedTags.map((tag) => `${tag}\\s*`);
+
   const expression = (allowedTags.length > 0) ?
-    `<(?!((?:/s*)?(?:${allowedTags.join('|')})))([^>])+>` :
-    '<[^>]*>';
-  const regExp = new RegExp(expression, 'g');
+    // Regex explanation
+    // Note: \ needs to be escaped in the final expression
+    // '<' Match the starting tag
+    // '(' Create a matching group
+    // '?!' Use negative lookup
+    //      we only want to match the tags that are not in the allowedTags array
+    // '\s*?' Optional match of any white space charater before optional /
+    // '\/?' Matches / zero to one time for the closing tag
+    // '\s*?' Optional match of any white space charater after optional /
+    // '(${allowedTags.join('\s*|')})>' matching group of the allowed tags
+    // ')' close the matching group of negative lookup
+    // '\w*[^<>]*' matches any word that isn't in the excluded group
+    // '>' Match closing tagq
+    `<(?!\\s*\/?\\s*(${allowedTags.join('|')})>)\\w*[^<>]*>` :
+    // Strips all tags
+    '<(\/?\\w*)\\w*[^<>]*>';
+
+  const regExp = new RegExp(expression, 'gm');
   return htmlString.replace(regExp, '');
 };
