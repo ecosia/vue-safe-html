@@ -35,5 +35,12 @@ describe('Utils', () => {
       const expected = '<p>Test1</ p><p>Test2</  p>';
       expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
     });
+
+    it('Removes all tags with empty allowed tags', () => {
+      const allowedTags = [];
+      const given = '<p>Test1</p> <strong  >Test2</strong> <  i>Test3</i>';
+      const expected = 'Test1 Test2 Test3';
+      expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
+    });
   });
 });
