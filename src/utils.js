@@ -23,9 +23,9 @@ export const sanitizeHTML = (htmlString, allowedTags = []) => {
     // ')' close the matching group of negative lookup
     // '\w*[^<>]*' matches any word that isn't in the excluded group
     // '>' Match closing tagq
-    `<(?!\\s*\/?\\s*(${allowedTags.join('|')})>)\\w*[^<>]*>` :
+    `<(?!\\s*\\/?\\s*(${allowedTagsWhiteSpaced.join('|')})>)\\w*[^<>]*>` :
     // Strips all tags
-    '<(\/?\\w*)\\w*[^<>]*>';
+    '<(\\/?\\w*)\\w*[^<>]*>';
 
   const regExp = new RegExp(expression, 'gm');
   return htmlString.replace(regExp, '');
