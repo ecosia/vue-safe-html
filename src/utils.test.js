@@ -23,9 +23,9 @@ describe('Utils', () => {
     });
 
     it('Strips similar tags', () => {
-      const allowedTags = ['p'];
-      const given = '<sp>Test1</sp> <sssp>Test2</sssp>';
-      const expected = 'Test1 Test2';
+      const allowedTags = ['p', 'b', 's'];
+      const given = '<sp>Test1</sp> <sssp>Test2</sssp><script></script> <blockquote>quote</blockquote>';
+      const expected = 'Test1 Test2 quote';
       expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
     });
 
