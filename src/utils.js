@@ -19,7 +19,7 @@ export const sanitizeHTML = (htmlString, allowedTags = []) => {
     // '\s*?' Optional match of any white space charater before optional /
     // '\/?' Matches / zero to one time for the closing tag
     // '\s*?' Optional match of any white space charater after optional /
-    // '(${allowedTags.join('\s*|')})>' matching group of the allowed tags
+    // '(${allowedTags.join('|')})>' matching group of the allowed tags
     // ')' close the matching group of negative lookup
     // '\w*[^<>]*' matches any word that isn't in the excluded group
     // '>' Match closing tagq

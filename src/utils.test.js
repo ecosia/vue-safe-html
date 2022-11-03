@@ -17,7 +17,7 @@ describe('Utils', () => {
 
     it('Strips input tags', () => {
       const allowedTags = ['strong', 'i'];
-      const given = '<p><i>An</i> <strong>input field</strong><input type="button"></p>';
+      const given = '<p><i>An</i> <strong>input field</strong><input type="button" /></p>';
       const expected = '<i>An</i> <strong>input field</strong>';
       expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
     });
