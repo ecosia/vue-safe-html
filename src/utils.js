@@ -8,7 +8,6 @@
 export const sanitizeHTML = (htmlString, allowedTags = []) => {
   // Add an optional white space to the allowed tags
   const allowedTagsWhiteSpaced = allowedTags.map((tag) => `${tag}\\s*`);
-  //const htmlAttributeRegex = new RegExp('<\\w*\\s*(\\w*[-]?\\w*=[\",\'].*[\",\'])>');
 
   // Remove tag attributes
   // The solution for this was found on:
