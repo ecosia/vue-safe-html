@@ -11,6 +11,8 @@ export const sanitizeHTML = (htmlString, allowedTags = []) => {
   //const htmlAttributeRegex = new RegExp('<\\w*\\s*(\\w*[-]?\\w*=[\",\'].*[\",\'])>');
 
   // Remove tag attributes
+  // The solution for this was found on:
+  // https://stackoverflow.com/questions/4885891/regex-for-removing-all-attributes-from-a-paragraph
   const htmlWithoutAttributes = htmlString.replace(/<(\w+)(.|[\r\n])*?>/g, '<$1>');
 
   const expression = (allowedTags.length > 0) ?
