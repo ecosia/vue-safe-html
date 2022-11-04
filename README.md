@@ -8,6 +8,8 @@
 
 A Vue directive which renders sanitised HTML dynamically. Zero dependencies, compatible with Vue versions 3 and 2, TypeScript-ready.
 
+**Note:** This library is not XSS-safe, but only strips tags programmatically.
+
 ## Installation
 
 Install package:
