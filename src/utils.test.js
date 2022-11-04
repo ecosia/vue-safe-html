@@ -42,5 +42,12 @@ describe('Utils', () => {
       const expected = 'Test1 Test2 Test3';
       expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
     });
+
+    it('Removes attributes from html', () => {
+      const allowedTags = ['p'];
+      const given = '<p data-test="test" title="test2">Test1</p> <strong data-test=\'test2\'>Test2</strong>';
+      const expected = '<p>Test1</p> Test2';
+      expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
+    });
   });
 });

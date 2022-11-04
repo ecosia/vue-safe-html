@@ -8,6 +8,10 @@
 export const sanitizeHTML = (htmlString, allowedTags = []) => {
   // Add an optional white space to the allowed tags
   const allowedTagsWhiteSpaced = allowedTags.map((tag) => `${tag}\\s*`);
+  //const htmlAttributeRegex = new RegExp('<\\w*\\s*(\\w*[-]?\\w*=[\",\'].*[\",\'])>');
+
+  // Remove tag attributes
+  const htmlWithoutAttributes = htmlString.replace(/<(\w+)(.|[\r\n])*?>/g, '<$1>');
 
   const expression = (allowedTags.length > 0) ?
     // Regex explanation
@@ -28,5 +32,5 @@ export const sanitizeHTML = (htmlString, allowedTags = []) => {
     '<(\\/?\\w*)\\w*[^<>]*>';
 
   const regExp = new RegExp(expression, 'gm');
-  return htmlString.replace(regExp, '');
+  return htmlWithoutAttributes.replace(regExp, '');
 };
