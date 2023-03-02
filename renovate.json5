@@ -12,6 +12,7 @@
     "dependencies",
     "{{manager}}"
   ],
+  // Group package updates together in one PR
   "packageRules": [
     {
       "matchPackagePatterns": ["^eslint", "^babel-eslint$"],
@@ -36,6 +37,13 @@
     {
       "matchPackagePatterns": ["^vue3$", "^@vue/test-utils3$"],
       "groupName": "vue3 packages"
+    },
+    {
+      "matchPackagePatterns": ["^node$"],
+      "groupName": "node",
+      "major": {
+        "dependencyDashboardApproval": true
+      }
     }
   ],
   "assignees": [
