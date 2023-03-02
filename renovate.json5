@@ -46,6 +46,9 @@
       }
     }
   ],
+  "patch": {
+    "enabled": false
+  },
   "assignees": [
     "axlwaii",
     "heldinz"
