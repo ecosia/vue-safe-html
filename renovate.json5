@@ -3,13 +3,39 @@
   "extends": [
     "config:base"
   ],
-  "prConcurrentLimit": 3, // only one PR can be open at a time.
+  "prConcurrentLimit": 3, // only three PRs can be open at a time.
   "timezone": "Europe/Berlin",
   // Add some custom labels
   // - {{manager}} adds the name of the manager used (https://docs.renovatebot.com/modules/manager/)
   "labels": [
     "dependencies",
     "{{manager}}"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^eslint", "^babel-eslint$"],
+      "groupName": "eslint packages"
+    },
+    {
+      "matchPackagePatterns": ["^jest", "^babel-jest$"],
+      "groupName": "jest packages"
+    },
+    {
+      "matchPackagePatterns": ["^@babel"],
+      "groupName": "@babel packages"
+    },
+    {
+      "matchPackagePatterns": ["^webpack", "^babel-loader$"],
+      "groupName": "webpack packages"
+    },
+    {
+      "matchPackagePatterns": ["^vue[^3]", "^@vue/test-utils$"],
+      "groupName": "vue2 packages"
+    },
+    {
+      "matchPackagePatterns": ["^vue3$", "^@vue/test-utils3$"],
+      "groupName": "vue3 packages"
+    }
   ],
   "assignees": [
     "axlwaii",
