@@ -6,7 +6,7 @@
   // Limiting renovatebot to creating PRs between 9-12, once per month.
   // This can be tweaked over time to increase/decrease the amount of PRs
   "schedule": [
-    "after 9am and before 12pm every month"
+    "after 9am and before 12pm on the second day of the month"
   ],
   "prConcurrentLimit": 3, // only one PR can be open at a time.
   "timezone": "Europe/Berlin",
