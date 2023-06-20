@@ -33,9 +33,9 @@ Vue.use(VueSafeHTML);
 
 In your component:
 
-```html
+```jsx
 <template>
-  <div v-safe-html="myUnsafeHTML">
+  <div v-safe-html="myUnsafeHTML" />
 </template>
 ```
 
@@ -91,11 +91,38 @@ Vue.use(VueSafeHTML, {
 
 It is also possible to provide custom allowed tags directly to the directive tag, using directive modifiers. This allows local override of the option:
 
-```html
+```jsx
 <template>
-  <!-- only allow p and strong tags -->
-  <div v-safe-html.p.strong="myUnsafeHTML">
+  <div v-safe-html.p.strong="myUnsafeHTML" />
 </template>
+```
+
+> Only allow p and strong tags
+
+#### Stripping all tags for HTML entity decoding
+
+To decode HTML entities only with no tags you can use the `strip-tags` directive argument:
+
+```jsx
+<template>
+  <div v-safe-html:strip-tags="unsafeHTML" />
+</template>
+```
+
+```js
+export default {
+  computed: {
+    myUnsafeHTML() {
+      return '<p><strong>Cats<strong> &amp; <em>&quot;Dogs&quot;</em></p>';
+    }
+  }
+}
+```
+
+Renders to:
+
+```html
+<div>Cats &amp; "Dogs"</div>
 ```
 
 ### Nuxt

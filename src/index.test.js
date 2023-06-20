@@ -62,5 +62,43 @@ describe('Plugin', () => {
       const expected = '<div><section><strong>Safe</strong></section> HTML</div>';
       expect(wrapper.element.outerHTML).toBe(expected);
     });
+
+    describe('Modifiers', () => {
+      it('Handles allowed tags as modifiers', () => {
+        const localVue = createLocalVue();
+        localVue.use(Plugin, {
+          allowedTags: [
+            ...defaultAllowedTags,
+            'section',
+          ],
+        });
+        // eslint-disable-next-line vue/one-component-per-file
+        const Component = localVue.component('SafeHtmlComponent', {
+          template: '<div v-safe-html.p.strong="\'<p><section><strong>Safe</strong></section> HTML<script></script> &amp; <mark>marked text</mark></p>\'"></div>',
+        });
+        const wrapper = shallowMount(Component, { localVue });
+        const expected = '<div><p><strong>Safe</strong> HTML &amp; marked text</p></div>';
+        expect(wrapper.element.outerHTML).toBe(expected);
+      });
+    });
+
+    describe('"strip-tags" argument', () => {
+      it('strips all HTML but leaves HTML entities', () => {
+        const localVue = createLocalVue();
+        localVue.use(Plugin, {
+          allowedTags: [
+            ...defaultAllowedTags,
+            'section',
+          ],
+        });
+        // eslint-disable-next-line vue/one-component-per-file
+        const Component = localVue.component('SafeHtmlComponent', {
+          template: '<div v-safe-html:strip-tags="\'<p><strong>Cats<strong> &amp; <em>&quot;Dogs&quot;</em></p>\'"></div>',
+        });
+        const wrapper = shallowMount(Component, { localVue });
+        const expected = '<div>Cats &amp; "Dogs"</div>';
+        expect(wrapper.element.outerHTML).toBe(expected);
+      });
+    });
   });
 });

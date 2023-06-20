@@ -21,19 +21,28 @@ const areTagsValid = (tags) => (
 
 export { defaultTags as allowedTags };
 
+const getAllowedTags = (initialTags, binding) => {
+  if (binding?.arg === 'strip-tags') {
+    // v-safe-html:strip-tags returns no tags
+    return [];
+  }
+
+  if (binding.modifiers) {
+    // v-safe-html.p.strong returns 'p' and 'strong'
+    const directiveTags = Object.keys(binding.modifiers);
+    if (directiveTags.length > 0 && areTagsValid(directiveTags)) {
+      return directiveTags;
+    }
+  }
+
+  return initialTags;
+};
+
 export default (tags) => {
   const initialTags = areTagsValid(tags) ? tags : defaultTags;
   return (el, binding) => {
-    let finalTags = initialTags;
-
-    if (binding.modifiers) {
-      const directiveTags = Object.keys(binding.modifiers);
-      if (directiveTags.length > 0 && areTagsValid(directiveTags)) {
-        finalTags = directiveTags;
-      }
-    }
-
-    const sanitized = sanitizeHTML(binding.value, finalTags);
+    const allowedTags = getAllowedTags(initialTags, binding);
+    const sanitized = sanitizeHTML(binding.value, allowedTags);
 
     if (typeof el.innerHTML === 'string') {
       // we're client-side and `el` is an HTMLElement
