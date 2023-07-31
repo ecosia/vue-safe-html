@@ -49,5 +49,19 @@ describe('Utils', () => {
       const expected = '<p>Test1</p> Test2';
       expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
     });
+
+    it('Does not crash on null input', () => {
+      const allowedTags = [];
+      const given = null;
+      const expected = '';
+      expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
+    });
+
+    it('Does not crash on undefined input', () => {
+      const allowedTags = [];
+      const given = undefined;
+      const expected = '';
+      expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
+    });
   });
 });

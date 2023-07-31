@@ -1,11 +1,14 @@
 /**
  * sanitizeHTML strips html tags in the given string
  * if allowedTags is empty, all tags are stripped
- * @param {*} htmlString  the HTML strings
+ * @param {*} htmlString  the HTML string
  * @param {*} allowedTags array of tags that are not stripped
  */
 // eslint-disable-next-line import/prefer-default-export
 export const sanitizeHTML = (htmlString, allowedTags = []) => {
+  if (htmlString == null) {
+    return '';
+  }
   // Add an optional white space to the allowed tags
   const allowedTagsWhiteSpaced = allowedTags.map((tag) => `${tag}\\s*`);
 
