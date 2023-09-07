@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Install + Build + Test
-    container: node:16.13-alpine
+    container: node:16.20-alpine
     steps:
       - uses: actions/checkout@v3
       - run: yarn
