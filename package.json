@@ -2,7 +2,8 @@
   "name": "vue-safe-html",
   "version": "2.2.0",
   "description": "A Vue directive which renders sanitised HTML dynamically",
-  "main": "dist/main.js",
+  "main": "dist/main.common.js",
+  "module": "dist/main.esm.js",
   "repository": "git@github.com:ecosia/vue-safe-html.git",
   "author": "Ecosia GmbH <opensource@ecosia.org>",
   "contributors": [
