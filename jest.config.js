@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   collectCoverage: true,
   transform: {
     '^.+\\.js$': ['babel-jest', { rootMode: 'upward' }],
