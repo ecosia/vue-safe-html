@@ -28,7 +28,7 @@ export const sanitizeHTML = (htmlString, allowedTags = [], allowedAttributes = [
       const allowedAttrs = attrs.split(/\s+/)
           .filter(attr => allowedAttributes.includes(attr.split('=')[0]))
           .join(' ');
-      return `<${tagName}${allowedAttrs ? ' ' + allowedAttrs : ''}>`;
+      return `<${tagName}${allowedAttrs ? ` ${allowedAttrs}` : ''}>`;
     }
     // If the tag is not allowed, strip it completely.
     return '';
