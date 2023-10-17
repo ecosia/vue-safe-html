@@ -9,6 +9,9 @@ export const removeAllTags = (input) => (input.replace(removeAllTagsRegex, ''));
  * @param {*} allowedTags array of tags that are not stripped
  */
 export const sanitizeHTML = (htmlString, allowedTags = [], allowedAttributes = []) => {
+  if (!htmlString) {
+    return '';
+  }
 
   if(allowedTags.length === 0) {
     return removeAllTags(htmlString);
