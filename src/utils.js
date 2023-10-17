@@ -13,7 +13,7 @@ export const sanitizeHTML = (htmlString, allowedTags = [], allowedAttributes = [
     return '';
   }
 
-  if(allowedTags.length === 0) {
+  if (allowedTags.length === 0) {
     return removeAllTags(htmlString);
   }
 
@@ -26,8 +26,8 @@ export const sanitizeHTML = (htmlString, allowedTags = [], allowedAttributes = [
       }
       // Otherwise, reconstruct the opening tag with only allowed attributes.
       const allowedAttrs = attrs.split(/\s+/)
-          .filter(attr => allowedAttributes.includes(attr.split('=')[0]))
-          .join(' ');
+        .filter((attr) => allowedAttributes.includes(attr.split('=')[0]))
+        .join(' ');
       return `<${tagName}${allowedAttrs ? ` ${allowedAttrs}` : ''}>`;
     }
     // If the tag is not allowed, strip it completely.
