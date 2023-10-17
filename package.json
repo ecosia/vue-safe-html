@@ -1,6 +1,6 @@
 {
   "name": "vue-safe-html",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A Vue directive which renders sanitised HTML dynamically",
   "type": "module",
   "main": "dist/main.common.js",
