@@ -49,5 +49,35 @@ describe('Utils', () => {
       const expected = '<p>Test1</p> Test2';
       expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
     });
+
+    it('Keeps allowed attributes', () => {
+      const allowedTags = ['p', 'strong'];
+      const allowedAttributes = ['title'];
+      const given = '<p data-test="test" title="test2">Test1</p> <strong data-test=\'test2\'>Test2</strong>';
+      const expected = '<p title="test2">Test1</p> <strong>Test2</strong>';
+      expect(utils.sanitizeHTML(given, allowedTags, allowedAttributes)).toBe(expected);
+    });
+
+    it('Ignores incomplete tag', () => {
+      const allowedTags = ['p', 'strong'];
+      const allowedAttributes = ['data-lazy'];
+      const given = '<p data-lazy="test">Test1</p> <adsfjgsa>with invalid tag </';
+      const expected = '<p data-lazy="test">Test1</p> with invalid tag </';
+      expect(utils.sanitizeHTML(given, allowedTags, allowedAttributes)).toBe(expected);
+    });
+
+    it('Does not error on null input', () => {
+      const allowedTags = [];
+      const given = null;
+      const expected = '';
+      expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
+    });
+
+    it('Does not crash on undefined input', () => {
+      const allowedTags = [];
+      const given = undefined;
+      const expected = '';
+      expect(utils.sanitizeHTML(given, allowedTags)).toBe(expected);
+    });
   });
 });

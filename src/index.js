@@ -7,6 +7,6 @@ export {
 
 export default {
   install: (Vue, options = {}) => {
-    Vue.directive('safe-html', createDirective(options.allowedTags));
+    Vue.directive('safe-html', createDirective(options.allowedTags, options.allowedAttributes));
   },
 };
