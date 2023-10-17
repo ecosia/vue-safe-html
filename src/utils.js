@@ -25,7 +25,7 @@ export const sanitizeHTML = (htmlString, allowedTags = [], allowedAttributes = [
         return `</${tagName}>`;
       }
       // Otherwise, reconstruct the opening tag with only allowed attributes.
-      let allowedAttrs = attrs.split(/\s+/)
+      const allowedAttrs = attrs.split(/\s+/)
           .filter(attr => allowedAttributes.includes(attr.split('=')[0]))
           .join(' ');
       return `<${tagName}${allowedAttrs ? ' ' + allowedAttrs : ''}>`;
