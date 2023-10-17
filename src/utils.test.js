@@ -58,7 +58,7 @@ describe('Utils', () => {
       expect(utils.sanitizeHTML(given, allowedTags, allowedAttributes)).toBe(expected);
     });
 
-    it('ignores incomplete tag', () => {
+    it('Ignores incomplete tag', () => {
       const allowedTags = ['p', 'strong'];
       const allowedAttributes = ['data-lazy'];
       const given = '<p data-lazy="test">Test1</p> <adsfjgsa>with invalid tag </';
