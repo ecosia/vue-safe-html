@@ -14,6 +14,7 @@ const defaultTags = [
   'sub',
   'sup',
 ];
+
 const areTagsValid = (tags) => (
   Array.isArray(tags) &&
   tags.every((tag) => typeof tag === 'string')
@@ -21,8 +22,9 @@ const areTagsValid = (tags) => (
 
 export { defaultTags as allowedTags };
 
-export default (tags) => {
+export default (tags, attributes) => {
   const initialTags = areTagsValid(tags) ? tags : defaultTags;
+
   return (el, binding) => {
     let finalTags = initialTags;
 
@@ -33,7 +35,7 @@ export default (tags) => {
       }
     }
 
-    const sanitized = sanitizeHTML(binding.value, finalTags);
+    const sanitized = sanitizeHTML(binding.value, finalTags, attributes);
 
     if (typeof el.innerHTML === 'string') {
       // we're client-side and `el` is an HTMLElement
