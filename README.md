@@ -98,6 +98,18 @@ It is also possible to provide custom allowed tags directly to the directive tag
 </template>
 ```
 
+#### allowedAttributes
+
+Array of strings. Default: []
+
+Customize the tag attributes that are allowed to be rendered:
+
+```js
+Vue.use(VueSafeHTML, {
+  allowedTags: ['a'],
+  allowedAttributes: ['title', 'class', 'href'],
+});
+
 ### Nuxt
 
 `vue-safe-html` is written as a Vue plugin so you can easily use it inside Nuxt by following [the Nuxt documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins#vue-plugins).
