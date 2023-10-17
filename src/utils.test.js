@@ -66,7 +66,7 @@ describe('Utils', () => {
       expect(utils.sanitizeHTML(given, allowedTags, allowedAttributes)).toBe(expected);
     });
 
-    it('Does not crash on null input', () => {
+    it('Does not error on null input', () => {
       const allowedTags = [];
       const given = null;
       const expected = '';
