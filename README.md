@@ -109,6 +109,7 @@ Vue.use(VueSafeHTML, {
   allowedTags: ['a'],
   allowedAttributes: ['title', 'class', 'href'],
 });
+```
 
 ### Nuxt
 
