@@ -6,9 +6,11 @@ export default {
   projects: [
     {
       displayName: 'Vue 2',
+      testEnvironment: 'jsdom',
     },
     {
       displayName: 'Vue 3',
+      testEnvironment: 'jsdom',
       testMatch: ['**/?(*.)+(test3).[jt]s?(x)'],
       moduleNameMapper: {
         '^vue$': 'vue3',
