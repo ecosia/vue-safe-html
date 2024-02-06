@@ -8,7 +8,7 @@ jobs:
     name: Install + Build + Test
     container: node:18.17-alpine
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: yarn
       - run: yarn build
       - run: yarn test
