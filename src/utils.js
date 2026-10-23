@@ -5,7 +5,7 @@ export const removeAllTags = (input) => (input.replace(removeAllTagsRegex, ''));
 /**
  * sanitizeHTML strips html tags in the given string
  * if allowedTags is empty, all tags are stripped
- * @param {*} htmlString  the HTML strings
+ * @param {*} htmlString  the HTML string
  * @param {*} allowedTags array of tags that are not stripped
  */
 export const sanitizeHTML = (htmlString, allowedTags = [], allowedAttributes = []) => {
